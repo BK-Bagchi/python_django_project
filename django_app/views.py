@@ -5,4 +5,6 @@ from django.http import HttpResponse
 
 
 def djangoproject(request):  # created my custom view
-    return HttpResponse('<h1>Starting a project as part of learning Django. Hope this project will be a fun.</h1>')
+    django_project_dictionary = {
+        'text': 'I was sleeping in peace at home but have been sent forcefully by the django app dictionary'}
+    return render(request, 'django_app/django_app.html', context=django_project_dictionary)
