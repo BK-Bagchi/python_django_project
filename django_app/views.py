@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def djangoproject(request):  # created my custom view
-    return HttpResponse('Starting a project as part of learning Django. Hope this project will be a fun.')
+    return HttpResponse('<h1>Starting a project as part of learning Django. Hope this project will be a fun.</h1>')
