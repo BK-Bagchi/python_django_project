@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +10,7 @@
       Starting a project as part of learning Django. Hope this project will be a
       fun.
     </h1>
-
     <b>{{text}}</b>
+    <img src="{% static 'images/Python_&_Django.png'%}" alt="Python_&_Django" />
   </body>
 </html>
