@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 
 # this lice needs to be included for url mapping
-from django.conf.urls import include
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
