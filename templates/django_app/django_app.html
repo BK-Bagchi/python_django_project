@@ -3,14 +3,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Django Application</title>
+    <link rel="stylesheet" href={% static "css/mystyle.css" %}/>
+    <title>First App</title>
   </head>
   <body>
     <h1>
       Starting a project as part of learning Django. Hope this project will be a
       fun.
     </h1>
-    <b>{{text}}</b>
-    <img src="{% static 'images/Python_&_Django.png'%}" alt="Python_&_Django" />
+    <h2>{{ text }}</h2>
+    <h3>{{ musician_list }}</h3>
+    <img src={% static 'images/Python_&_Django.png' %} alt="Python_&_Django"/>
+    <table border="1">
+      <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Instrument</th>
+      </tr>
+      {% for i in musician_list %}
+      <tr>
+          <td>{{ i.first_name }}</td>
+          <td>{{ i.last_name }}</td>
+          <td>{{ i.instrument }}</td>
+      </tr> 
+      {% endfor %}
+  </table>
   </body>
 </html>
