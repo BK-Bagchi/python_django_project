@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import *
 
-# Create your views here.
 
-
-def djangoproject(request):  # created my custom view
-    django_project_dictionary = {
-        'text': 'I was sleeping in peace at home but have been sent forcefully by the django app dictionary'}
-    return render(request, 'django_app/django_app.html', context=django_project_dictionary)
+def index(request):
+    # It somewhat looks like 'SELECT * from Musician ORDER BY first_name ASC'
+    musician_list = Musician.objects.order_by('first_name')
+    diction = {
+        'text': 'This view is coming from "first_app" view',
+        'musician_list': musician_list
+    }
+    return render(request, 'first_app/index.html', context=diction)
