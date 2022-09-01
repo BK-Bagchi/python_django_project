@@ -15,10 +15,23 @@ def djangoproject(request):
 
 
 def form(request):
-    # data of the fields of the form copied
     new_form = forms.user_form()
     diction = {
         "text": "This form is created using Django",
-        'test_form': new_form
+        'test_form': new_form,
     }
+    #
+    if request.method == 'POST':
+        new_form = forms.user_form(request.POST)
+        #
+        if new_form.is_valid():
+            user_name = new_form.cleaned_data["user_name"]
+            user_email = new_form.cleaned_data["user_email"]
+            user_birthday = new_form.cleaned_data["user_birthday"]
+            #
+            diction.update({'user_name': user_name})
+            diction.update({'user_email': user_email})
+            diction.update({'user_birthday': user_birthday})
+            diction.update({'form_submitted': 'True'})
+        #
     return render(request, 'django_app/form.html', context=diction)
