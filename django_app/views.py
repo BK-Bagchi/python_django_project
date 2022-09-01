@@ -20,4 +20,4 @@ def form(request):
         "text": "This form is created using Django",
         'test_form': new_form
     }
-    return render(request, 'first_app/form.html', context=diction)
+    return render(request, 'django_app/form.html', context=diction)
