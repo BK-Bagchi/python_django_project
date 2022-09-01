@@ -8,3 +8,5 @@ class user_form(forms.Form):
         attrs={'placeholder': 'Enter your email'}))
     user_birthday = forms.DateField(label="Birthday",
                                     widget=forms.TextInput(attrs={'type': 'date'}))
+
+# user_name, user_email, user_birthday works as user input fields that we used to make with HTML

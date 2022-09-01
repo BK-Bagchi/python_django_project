@@ -15,6 +15,7 @@ def djangoproject(request):
 
 
 def form(request):
+    # data of the fields of the form copied
     new_form = forms.user_form()
     diction = {
         "text": "This form is created using Django",
