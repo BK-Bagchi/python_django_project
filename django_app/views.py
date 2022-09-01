@@ -15,13 +15,15 @@ def djangoproject(request):
 
 
 def form(request):
+    # data of the fields of the form copied
     new_form = forms.user_form()
     diction = {
         "text": "This form is created using Django",
         'test_form': new_form,
     }
-    #
+    # checks whether the form is submitted
     if request.method == 'POST':
+        # copied submitted data from the form
         new_form = forms.user_form(request.POST)
         #
         if new_form.is_valid():
